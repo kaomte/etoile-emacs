@@ -29,42 +29,36 @@
 (use-package +emacs
   :straight (+emacs :type git
                     :host github
-                    :repo "jsalzbergedu/etoile-emacs"
+                    :repo "kaomte/etoile-emacs"
                     :files ("+emacs/*.el"))
   :demand t)
 
 (use-package etoile-themes
   :straight (etoile-themes :type git
                            :host github
-                           :repo "jsalzbergedu/etoile-emacs"
+                           :repo "kaomte/etoile-emacs"
                            :files ("etoile-themes/*.el"))
   :demand t)
 
 (use-package etoile-keybindings
   :straight (etoile-keybindings :type git
                                 :host github
-                                :repo "jsalzbergedu/etoile-emacs"
+                                :repo "kaomte/etoile-emacs"
                                 :files ("etoile-keybindings/*.el"))
   :demand t)
 
 (use-package etoile-programming
   :straight (etoile-programming :type git
                                 :host github
-                                :repo "jsalzbergedu/etoile-emacs"
+                                :repo "kaomte/etoile-emacs"
                                 :files ("etoile-programming/*.el"))
   :demand t)
 
 (use-package etoile-apps
   :straight (etoile-apps :type git
                          :host github
-                         :repo "jsalzbergedu/etoile-emacs"
+                         :repo "kaomte/etoile-emacs"
                          :files ("etoile-apps/*.el"))
-  :demand t)
-
-(use-package opam-user-setup
-  :straight nil
-  :load-path "~/.emacs.d"
-  :if (f-exists-p "~/.emacs.d/opam-user-setup.el")
   :demand t)
 
 (provide 'etoile)
