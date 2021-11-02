@@ -29,8 +29,8 @@
   "An alist of personal info.")
 
 (setq personal-info-info
-      '((name "[Insert Your Name Here]")
-        (email "[Insert Your Email Here]")))
+      '((name "Kaom Te")
+        (email "te.kaom@gmail.com")))
 
 (defun personal-info-get (key)
   "Using KEY, get an item from the personal info list."

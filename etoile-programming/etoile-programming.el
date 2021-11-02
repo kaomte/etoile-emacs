@@ -59,13 +59,6 @@
   :demand t
   :straight nil)
 
-;; Cookiecutter to quickly start projects
-(use-package cookiecutter
-  :straight (cookiecutter :type git
-                          :host github
-                          :repo "jsalzbergedu/cookiecutter-emacs-ui")
-  :defer t)
-
 ;; Compile for... compilation
 (use-package compile
   :after ansi-color
@@ -95,7 +88,7 @@
   :after (prettify-utils)
   :straight (+prettify-utils :type git
                              :host github
-                             :repo "jsalzbergedu/etoile-emacs"
+                             :repo "kaomte/etoile-emacs"
                              :files ("etoile-programming/+prettify-utils/*.el"))
   :config
   (add-hook 'prog-minor-modes-common 'prettify-symbols-mode))
@@ -104,12 +97,6 @@
   :demand t
   :straight nil)
 
-;; Cookiecutter to quickly start projects
-(use-package cookiecutter
-  :straight (cookiecutter :type git
-                          :host github
-                          :repo "jsalzbergedu/cookiecutter-emacs-ui")
-  :defer t)
 
 ;; Compile for... compilation
 (use-package compile
@@ -204,7 +191,7 @@
   :config (yasnippet-snippets-initialize))
 
 (add-hook 'prog-minor-modes-common 'yas-minor-mode)
-(add-hook 'prog-minor-modes-common 'evil-normalize-keymaps)
+
 ;; Company mode for autocompletion
 
 (use-package company
@@ -314,16 +301,8 @@ _j_: company-select-next-or-abort
   :demand t
   :straight (personal-info :type git
                            :host github
-                           :repo "jsalzbergedu/etoile-emacs"
+                           :repo "kaomte/etoile-emacs"
                            :files ("personal-info/*.el")))
-
-(use-package project-init
-  :straight (project-init :type git
-                          :host github
-                          :repo "jsalzbergedu/project-init")
-  :init (progn
-            (setq project-init-author-email (personal-info-get 'email)
-                  project-init-author-name (personal-info-get 'name))))
 
 ;; Ripgrep for fast grepping through projects
 (use-package ripgrep
@@ -346,6 +325,10 @@ _j_: company-select-next-or-abort
   (projectile-global-mode 1)
   (setq projectile-completion-system 'ivy))
 
+(use-package helm-lsp
+  :commands
+  helm-lsp-workspace-symbol)
+
 (use-package counsel-projectile
   :straight t
   :demand t
@@ -362,14 +345,6 @@ _j_: company-select-next-or-abort
 (use-package git-time-machine
   :straight t
   :defer t)
-
-;; Evil-magit, the only way I can use magit
-(use-package evil-magit
-  :straight (evil-magit :type git
-                        :host github
-                        :repo "emacs-evil/evil-magit")
-  :demand t
-  :after magit)
 
 (use-package keychain-environment
   :straight t
@@ -389,7 +364,7 @@ _j_: company-select-next-or-abort
   :after (projectile counsel-projectile flycheck hydra lsp-ui)
   :straight (+projectile :type git
                          :host github
-                         :repo "jsalzbergedu/etoile-emacs"
+                         :repo "kaomte/etoile-emacs"
                          :files ("etoile-programming/+projectile/*.el"))
   :general                              ;
   (:states '(normal motion)
