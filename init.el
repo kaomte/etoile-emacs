@@ -34,6 +34,6 @@
 (use-package etoile
   :straight (etoile :type git
                     :host github
-                    :repo "jsalzbergedu/etoile-emacs"
+                    :repo "kaomte/etoile-emacs"
                     :files ("etoile-emacs/*.el"))
   :demand t)
